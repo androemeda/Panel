@@ -1,0 +1,23 @@
+Senior Backend Engineer
+
+About the role
+We are hiring a Senior Backend Engineer to own the design and reliability of the services powering our platform. You will work across the stack of distributed systems that handle high request volume, and you will be accountable for the systems you ship in production.
+
+Responsibilities
+- Design and own backend services end to end, including API contracts, data models, and failure handling.
+- Lead architecture decisions for scalability, including partitioning, caching, and asynchronous processing.
+- Drive code quality through testing standards and rigorous code review.
+- Participate in on-call rotation, lead incident response, and improve service reliability over time.
+- Mentor mid-level engineers and raise the technical bar of the team.
+
+Requirements (required)
+- 5+ years building backend services in Python, Go, or Java.
+- Strong system design skills with demonstrable ownership of a production system.
+- Experience with distributed systems concepts: queues, caching, consistency tradeoffs.
+- A track record of writing well-tested, maintainable code.
+- Production ownership experience: on-call, observability, and incident handling.
+
+Preferred
+- Experience with Kubernetes and cloud infrastructure (AWS or GCP).
+- Exposure to event-driven architectures and message brokers.
+- Experience mentoring or leading a small team.
