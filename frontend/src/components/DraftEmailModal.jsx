@@ -10,10 +10,12 @@ function formatSlot(slot) {
 
 export default function DraftEmailModal({ decision, onClose, onApprove, approving }) {
   const draft = decision?.draft_email;
+  const [to, setTo] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
 
   useEffect(() => {
+    setTo(draft?.to ?? "");
     setSubject(draft?.subject ?? "");
     setBody(draft?.body ?? "");
   }, [draft]);
@@ -28,7 +30,7 @@ export default function DraftEmailModal({ decision, onClose, onApprove, approvin
         <div className="modal-header">
           <div>
             <p className="eyebrow">{draft.email_type}</p>
-            <h2 id="draft-title">{draft.to}</h2>
+            <h2 id="draft-title">Review email</h2>
           </div>
           <button type="button" className="icon-button" onClick={onClose} aria-label="Close">
             x
@@ -42,6 +44,15 @@ export default function DraftEmailModal({ decision, onClose, onApprove, approvin
             ))}
           </div>
         ) : null}
+
+        <label className="textarea-label">
+          <span>Recipient email</span>
+          <input
+            type="email"
+            value={to}
+            onChange={(event) => setTo(event.target.value)}
+          />
+        </label>
 
         <label className="textarea-label">
           <span>Subject</span>
@@ -60,8 +71,8 @@ export default function DraftEmailModal({ decision, onClose, onApprove, approvin
           <button
             type="button"
             className="primary-button"
-            onClick={() => onApprove(decision.candidate_id, { subject, body })}
-            disabled={approving || !subject.trim() || !body.trim()}
+            onClick={() => onApprove(decision.candidate_id, { to, subject, body })}
+            disabled={approving || !to.trim() || !subject.trim() || !body.trim()}
           >
             {approving ? "Approving..." : "Approve and Send"}
           </button>

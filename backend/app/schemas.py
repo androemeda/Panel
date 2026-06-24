@@ -136,6 +136,7 @@ class CandidateDecisionResponse(BaseModel):
 
 
 class ApproveDraftRequest(BaseModel):
+    to: str | None = None
     subject: str | None = None
     body: str | None = None
 

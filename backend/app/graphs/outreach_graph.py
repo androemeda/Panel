@@ -117,10 +117,12 @@ def human_review_interrupt_node(state: PipelineState | dict[str, Any]) -> dict[s
     if not isinstance(approval, dict):
         raise ValueError("Approval payload must be an object")
 
+    to = approval.get("to") or current.draft_email.to
     subject = approval.get("subject") or current.draft_email.subject
     body = approval.get("body") or current.draft_email.body
     approved_draft = current.draft_email.model_copy(
         update={
+            "to": to,
             "subject": subject,
             "body": body,
             "status": "approved",
@@ -245,6 +247,7 @@ def run_outreach_until_interrupt(
 def resume_outreach_after_approval(
     *,
     candidate_id: str,
+    to: str,
     subject: str,
     body: str,
 ) -> PipelineState:
@@ -259,7 +262,7 @@ def resume_outreach_after_approval(
         },
     }
     result = graph.invoke(
-        Command(resume={"subject": subject, "body": body}),
+        Command(resume={"to": to, "subject": subject, "body": body}),
         config=config,
     )
     if "__interrupt__" in result:

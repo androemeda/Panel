@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, Query, UploadFile
@@ -35,6 +36,7 @@ from .schemas import (
     StateResponse,
 )
 from .services.store import SessionState, session_store
+from .services.email_mock import EmailConfigurationError, EmailDeliveryError
 from .state import PipelineState
 from .vectordb import MissingConfigurationError, query_rubrics
 
@@ -56,6 +58,7 @@ app.add_middleware(
 
 
 DATA_ROOT = BACKEND_ROOT / "data"
+EMAIL_PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 
 def _resolve_data_file(relative_path: str) -> Path:
@@ -300,25 +303,41 @@ def approve_candidate_draft(
             held_slots=session.held_slots,
         )
 
+    to = payload.to if payload.to is not None else draft.to
     subject = payload.subject if payload.subject is not None else draft.subject
     body = payload.body if payload.body is not None else draft.body
 
+    to = to.strip()
     if not subject.strip():
         raise HTTPException(status_code=400, detail="Approved subject cannot be empty")
     if not body.strip():
         raise HTTPException(status_code=400, detail="Approved body cannot be empty")
+    if not EMAIL_PATTERN.match(to):
+        raise HTTPException(status_code=400, detail="Approved recipient email must be valid")
 
     try:
         result_state = resume_outreach_after_approval(
             candidate_id=candidate_id,
+            to=to,
             subject=subject,
             body=body,
         )
+    except EmailConfigurationError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+    except EmailDeliveryError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
     if result_state.draft_email is None or result_state.draft_email.status != "sent":
         raise HTTPException(status_code=500, detail="Approval did not produce a sent draft")
+
+    profile = session.candidates.get(candidate_id)
+    if profile is not None:
+        session.candidates[candidate_id] = profile.model_copy(update={"email": to})
+    for item in session.candidate_pool:
+        if item.candidate_id == candidate_id:
+            item.email = to
 
     session.drafts[candidate_id] = result_state.draft_email
     session.held_slots = result_state.held_slots

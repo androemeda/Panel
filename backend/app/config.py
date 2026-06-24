@@ -25,6 +25,8 @@ class Settings(BaseModel):
     langsmith_tracing: str = "false"
     langsmith_api_key: str | None = Field(default=None)
     langsmith_project: str = "recruiting-pipeline"
+    resend_api_key: str | None = Field(default=None)
+    resend_from_email: str = "Canteeno <verify@canteeno.in>"
     api_cors_origins: list[str] = Field(
         default_factory=lambda: ["http://localhost:5173", "http://127.0.0.1:5173"]
     )
@@ -41,7 +43,7 @@ def _env_value(name: str) -> str | None:
     if not value:
         return None
     stripped = value.strip()
-    if stripped in {"...", "sk-...", "lsv2_..."}:
+    if stripped in {"...", "sk-...", "lsv2_...", "re_..."}:
         return None
     return stripped
 
@@ -51,7 +53,7 @@ def _env_file_value(name: str) -> str | None:
     if not value:
         return None
     stripped = value.strip()
-    if stripped in {"...", "sk-...", "lsv2_..."}:
+    if stripped in {"...", "sk-...", "lsv2_...", "re_..."}:
         return None
     return stripped
 
@@ -76,5 +78,10 @@ def get_settings() -> Settings:
         langsmith_tracing=os.getenv("LANGSMITH_TRACING", "false"),
         langsmith_api_key=_env_value("LANGSMITH_API_KEY"),
         langsmith_project=os.getenv("LANGSMITH_PROJECT", "recruiting-pipeline"),
+        resend_api_key=_env_value("RESEND_API_KEY"),
+        resend_from_email=os.getenv(
+            "RESEND_FROM_EMAIL",
+            "Canteeno <verify@canteeno.in>",
+        ),
         api_cors_origins=_split_csv(os.getenv("API_CORS_ORIGINS"), default_origins),
     )

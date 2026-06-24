@@ -106,9 +106,9 @@ export async function decideCandidate(candidateId, decision) {
 }
 
 
-export async function approveDraft(candidateId, { subject, body }) {
+export async function approveDraft(candidateId, { to, subject, body }) {
   return request(`/api/candidates/${candidateId}/approve`, {
     method: "POST",
-    body: JSON.stringify({ subject, body })
+    body: JSON.stringify({ to, subject, body })
   });
 }

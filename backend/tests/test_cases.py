@@ -298,7 +298,7 @@ def test_scenario_07_approval_gate(client, resume_pdfs):
     # 2. Approve -> email is sent and the invite's slots are now held.
     approve = client.post(
         f"/api/candidates/{candidate_id}/approve",
-        json={"subject": draft["subject"], "body": draft["body"]},
+        json={"to": draft["to"], "subject": draft["subject"], "body": draft["body"]},
     )
     assert approve.status_code == 200, approve.text
     approved = approve.json()
@@ -324,6 +324,7 @@ def test_scenario_07b_rejection_holds_no_slots():
 
     sent_state = resume_outreach_after_approval(
         candidate_id="c002",
+        to=result.draft_email.to,
         subject=result.draft_email.subject,
         body=result.draft_email.body,
     )

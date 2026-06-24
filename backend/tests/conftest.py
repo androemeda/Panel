@@ -56,9 +56,18 @@ def _wipe_local_state() -> None:
         outreach_graph.CHECKPOINT_PATH.unlink()
 
 
+def _fake_send_email(draft_email):
+    sent_email = draft_email.model_copy(update={"status": "sent"})
+    emails = email_mock._read_sent()
+    emails.append(sent_email)
+    email_mock._write_sent(emails)
+    return sent_email
+
+
 @pytest.fixture(autouse=True)
-def clean_state():
+def clean_state(monkeypatch):
     _wipe_local_state()
+    monkeypatch.setattr(outreach_graph, "send_email", _fake_send_email)
     yield
     _wipe_local_state()
 
