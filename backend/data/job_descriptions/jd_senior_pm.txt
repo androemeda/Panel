@@ -1,0 +1,22 @@
+Senior Product Manager
+
+About the role
+We are looking for a Senior Product Manager to own the strategy and delivery of a core product area. You will set direction, align engineering and design, and make decisions grounded in data and customer evidence.
+
+Responsibilities
+- Define and own the product strategy and roadmap for your area, tied to clear business outcomes.
+- Align engineering, design, and leadership around priorities and resolve competing demands.
+- Define success metrics, run experiments, and make data-driven product decisions.
+- Drive execution from discovery through launch and measure impact after shipping.
+- Communicate strategy and tradeoffs clearly to technical and non-technical stakeholders.
+
+Requirements (required)
+- 5+ years of product management experience, including ownership of a product area.
+- Demonstrated ability to set product strategy and connect it to business results.
+- Strong stakeholder management and cross-functional leadership.
+- Experience defining metrics and using experimentation to drive decisions.
+- A track record of shipping meaningful product outcomes.
+
+Preferred
+- Experience in a technical product domain.
+- Familiarity with analytics tooling and A/B testing platforms.

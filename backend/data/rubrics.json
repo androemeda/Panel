@@ -1,0 +1,270 @@
+[
+  {
+    "role_family": "backend engineer",
+    "seniority": "senior",
+    "competency": "system design",
+    "strong_descriptor": "Independently designs services with clear API contracts, data models, and explicit consistency and failure-mode tradeoffs.",
+    "average_descriptor": "Designs standard service architectures and is aware of scaling, but reasons about failure modes only at a surface level.",
+    "weak_descriptor": "Implements features inside an existing design with little independent architecture ownership.",
+    "red_flags": [
+      "no ownership of a system end to end",
+      "cannot articulate any design tradeoff"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "senior",
+    "competency": "distributed systems and scalability",
+    "strong_descriptor": "Has shipped systems handling real load; reasons concretely about partitioning, caching, queues, and back-pressure.",
+    "average_descriptor": "Understands horizontal scaling and caching conceptually with some production exposure.",
+    "weak_descriptor": "Limited exposure beyond a single-instance app; scaling described only in generic terms.",
+    "red_flags": [
+      "claims scale with no metrics",
+      "confuses vertical and horizontal scaling"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "senior",
+    "competency": "code quality and testing",
+    "strong_descriptor": "Writes well-factored, tested code; sets testing standards and reviews others' code rigorously.",
+    "average_descriptor": "Writes reasonable code with unit tests for core paths; participates in reviews.",
+    "weak_descriptor": "Tests are sparse or absent; relies on manual verification.",
+    "red_flags": [
+      "no automated tests mentioned anywhere",
+      "no code review experience"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "senior",
+    "competency": "production ownership and reliability",
+    "strong_descriptor": "Owns services in production: on-call, incident response, observability, and measurable reliability improvements.",
+    "average_descriptor": "Has supported production systems and handled some incidents under guidance.",
+    "weak_descriptor": "Primarily worked in pre-production or hand-off model with no production ownership.",
+    "red_flags": [
+      "never been on-call or owned uptime",
+      "no incident or postmortem experience"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "mid",
+    "competency": "api and service development",
+    "strong_descriptor": "Designs and ships well-structured REST or RPC services independently with clean interfaces.",
+    "average_descriptor": "Builds endpoints to spec with occasional guidance on interface design.",
+    "weak_descriptor": "Only modifies existing endpoints; has not designed a service interface.",
+    "red_flags": [
+      "no service or API work shown"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "mid",
+    "competency": "code quality and testing",
+    "strong_descriptor": "Consistently writes tested, readable code and improves the codebase opportunistically.",
+    "average_descriptor": "Writes working code with tests on main paths.",
+    "weak_descriptor": "Code works but is untested or hard to follow.",
+    "red_flags": [
+      "no testing experience at all"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "mid",
+    "competency": "debugging and problem solving",
+    "strong_descriptor": "Systematically isolates root causes across the stack using logs, traces, and reproduction.",
+    "average_descriptor": "Resolves most bugs with some trial and error.",
+    "weak_descriptor": "Struggles to debug beyond the immediate symptom.",
+    "red_flags": [
+      "no examples of debugging non-trivial issues"
+    ]
+  },
+  {
+    "role_family": "backend engineer",
+    "seniority": "mid",
+    "competency": "collaboration",
+    "strong_descriptor": "Communicates clearly, unblocks teammates, and gives constructive review feedback.",
+    "average_descriptor": "Works well within a team and responds to feedback.",
+    "weak_descriptor": "Works mostly in isolation with limited collaboration signals.",
+    "red_flags": [
+      "no team or cross-functional work mentioned"
+    ]
+  },
+  {
+    "role_family": "frontend engineer",
+    "seniority": "junior",
+    "competency": "html css javascript fundamentals",
+    "strong_descriptor": "Solid command of semantic HTML, modern CSS layout, and core JavaScript including async patterns.",
+    "average_descriptor": "Comfortable with the basics and able to build simple pages independently.",
+    "weak_descriptor": "Gaps in fundamentals; relies heavily on copied snippets.",
+    "red_flags": [
+      "cannot explain basic layout or async behavior"
+    ]
+  },
+  {
+    "role_family": "frontend engineer",
+    "seniority": "junior",
+    "competency": "react and component development",
+    "strong_descriptor": "Builds clean, reusable React components with correct state and props handling.",
+    "average_descriptor": "Builds working React components with some structural rough edges.",
+    "weak_descriptor": "Has only followed tutorials; limited independent React work.",
+    "red_flags": [
+      "no hands-on React or component framework experience"
+    ]
+  },
+  {
+    "role_family": "frontend engineer",
+    "seniority": "junior",
+    "competency": "ui implementation fidelity",
+    "strong_descriptor": "Translates designs into pixel-accurate, responsive interfaces.",
+    "average_descriptor": "Implements designs closely with minor inconsistencies.",
+    "weak_descriptor": "Output diverges noticeably from the intended design.",
+    "red_flags": [
+      "no evidence of building real user interfaces"
+    ]
+  },
+  {
+    "role_family": "frontend engineer",
+    "seniority": "junior",
+    "competency": "learning and coachability",
+    "strong_descriptor": "Demonstrates fast learning, curiosity, and clear growth from feedback (projects, courses, internships).",
+    "average_descriptor": "Shows reasonable progression and willingness to learn.",
+    "weak_descriptor": "Little evidence of recent learning or growth.",
+    "red_flags": [
+      "no projects, internships, or learning signals"
+    ]
+  },
+  {
+    "role_family": "devops engineer",
+    "seniority": "senior",
+    "competency": "ci cd and automation",
+    "strong_descriptor": "Designs and owns robust CI/CD pipelines and automates release and rollback safely.",
+    "average_descriptor": "Maintains existing pipelines and adds automation with guidance.",
+    "weak_descriptor": "Limited pipeline experience; mostly manual deploys.",
+    "red_flags": [
+      "no CI/CD or automation experience"
+    ]
+  },
+  {
+    "role_family": "devops engineer",
+    "seniority": "senior",
+    "competency": "infrastructure as code",
+    "strong_descriptor": "Manages infrastructure declaratively (Terraform, etc.) with reviewable, versioned modules.",
+    "average_descriptor": "Uses IaC for common resources with some manual steps.",
+    "weak_descriptor": "Provisions infrastructure mostly by hand through consoles.",
+    "red_flags": [
+      "never used infrastructure as code"
+    ]
+  },
+  {
+    "role_family": "devops engineer",
+    "seniority": "senior",
+    "competency": "observability and incident response",
+    "strong_descriptor": "Builds metrics, logging, and alerting; leads incident response and writes postmortems.",
+    "average_descriptor": "Sets up basic monitoring and participates in incidents.",
+    "weak_descriptor": "Minimal observability; reactive to outages.",
+    "red_flags": [
+      "no monitoring or on-call experience"
+    ]
+  },
+  {
+    "role_family": "devops engineer",
+    "seniority": "senior",
+    "competency": "cloud and container orchestration",
+    "strong_descriptor": "Operates containerized workloads on Kubernetes or equivalent at production scale.",
+    "average_descriptor": "Runs containers in cloud with working knowledge of orchestration.",
+    "weak_descriptor": "Basic cloud usage; little container or orchestration depth.",
+    "red_flags": [
+      "no cloud or container experience"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "senior",
+    "competency": "product strategy and vision",
+    "strong_descriptor": "Sets a clear, evidence-backed product strategy and connects it to business outcomes.",
+    "average_descriptor": "Contributes to strategy and understands the broader roadmap.",
+    "weak_descriptor": "Executes features without a clear strategic frame.",
+    "red_flags": [
+      "no ownership of product direction"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "senior",
+    "competency": "stakeholder management",
+    "strong_descriptor": "Aligns engineering, design, and leadership; navigates conflict and drives decisions.",
+    "average_descriptor": "Works effectively with cross-functional partners on most issues.",
+    "weak_descriptor": "Limited cross-functional influence; defers most decisions.",
+    "red_flags": [
+      "no cross-functional leadership shown"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "senior",
+    "competency": "data-driven decision making",
+    "strong_descriptor": "Defines metrics, runs experiments, and makes decisions grounded in data.",
+    "average_descriptor": "Uses metrics to inform decisions with some rigor.",
+    "weak_descriptor": "Decisions are mostly intuition with little measurement.",
+    "red_flags": [
+      "no metrics or experimentation experience"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "senior",
+    "competency": "execution and delivery",
+    "strong_descriptor": "Consistently ships meaningful product outcomes on realistic timelines.",
+    "average_descriptor": "Delivers committed work with occasional slippage.",
+    "weak_descriptor": "Delivery is inconsistent or unclear.",
+    "red_flags": [
+      "no shipped product outcomes"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "mid",
+    "competency": "requirements and user stories",
+    "strong_descriptor": "Writes clear, well-scoped requirements and user stories that engineering can build from directly.",
+    "average_descriptor": "Writes usable requirements that sometimes need clarification.",
+    "weak_descriptor": "Requirements are vague or frequently reworked.",
+    "red_flags": [
+      "no requirements authoring experience"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "mid",
+    "competency": "stakeholder communication",
+    "strong_descriptor": "Communicates crisply with partners and keeps everyone aligned on status and tradeoffs.",
+    "average_descriptor": "Communicates adequately with the immediate team.",
+    "weak_descriptor": "Communication gaps cause avoidable confusion.",
+    "red_flags": [
+      "no cross-functional communication signals"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "mid",
+    "competency": "prioritization",
+    "strong_descriptor": "Prioritizes effectively against value and effort and defends the tradeoffs.",
+    "average_descriptor": "Prioritizes reasonably with some guidance.",
+    "weak_descriptor": "Struggles to prioritize; treats everything as urgent.",
+    "red_flags": [
+      "no prioritization or roadmap experience"
+    ]
+  },
+  {
+    "role_family": "product manager",
+    "seniority": "mid",
+    "competency": "analytics and metrics",
+    "strong_descriptor": "Defines and tracks the right metrics and turns them into product actions.",
+    "average_descriptor": "Reads standard product metrics and draws basic conclusions.",
+    "weak_descriptor": "Little use of metrics in the role.",
+    "red_flags": [
+      "no analytics exposure"
+    ]
+  }
+]

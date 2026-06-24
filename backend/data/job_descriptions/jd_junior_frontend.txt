@@ -1,0 +1,22 @@
+Junior Frontend Engineer
+
+About the role
+We are hiring a Junior Frontend Engineer to help build and polish our web interfaces. You will work closely with designers and senior engineers, implement UI from designs, and grow your skills quickly on a supportive team.
+
+Responsibilities
+- Build and maintain user interface components in React.
+- Translate designs into responsive, accessible web pages.
+- Fix UI bugs and improve the look and feel of existing screens.
+- Collaborate with designers and backend engineers to ship features.
+- Learn continuously and incorporate code review feedback.
+
+Requirements (required)
+- Solid fundamentals in HTML, CSS, and JavaScript.
+- Hands-on experience building components in React (projects, internships, or coursework count).
+- Ability to implement designs with good visual fidelity.
+- Eagerness to learn and strong coachability.
+
+Preferred
+- Familiarity with TypeScript.
+- Experience with a component library or design system.
+- A portfolio or personal projects to share.
