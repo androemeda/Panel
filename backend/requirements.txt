@@ -10,3 +10,5 @@ langgraph-checkpoint-sqlite
 pinecone
 pypdf
 langsmith
+pytest
+httpx
